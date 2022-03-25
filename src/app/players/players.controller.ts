@@ -1,5 +1,6 @@
 import { BadRequestException, Controller, Get, Param } from '@nestjs/common';
-import { ApiBadRequestResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiOkResponse, ApiOperation, ApiTags, getSchemaPath } from '@nestjs/swagger';
+import { PlayerInfoDto } from './dto/player-info.dto';
 import { PlayersService } from './players.service';
 
 @Controller('players')
@@ -13,7 +14,7 @@ export class PlayersController {
   @ApiBadRequestResponse({description: 'Bad request'})
   public async show(
     @Param('address') address: string
-  ): Promise<any> {
+  ): Promise<PlayerInfoDto> {
     try {
       return await this.playersService.getInfo(address)
     } catch (e) {
