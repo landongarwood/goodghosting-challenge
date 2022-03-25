@@ -11,6 +11,7 @@ import { GameStatsModule } from './app/game-stats/game-stats.module';
     ConfigModule.forRoot({
       load: [configuration],
       envFilePath: '.env',
+      isGlobal: true,
     }),
     PlayersModule,
     GameStatsModule,
