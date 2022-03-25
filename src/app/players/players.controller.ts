@@ -13,6 +13,6 @@ export class PlayersController {
       return await this.playersService.getInfo(address)
     } catch (e) {
       throw new BadRequestException(e.message)
-    }    
+    }
   }
 }
