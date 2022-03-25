@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { BaseService } from 'src/common/base.service';
+import { BaseService } from '../../common/base.service';
 
 @Injectable()
 export class GameStatsService extends BaseService {
