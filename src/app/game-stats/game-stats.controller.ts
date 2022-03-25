@@ -1,5 +1,5 @@
 import { BadRequestException, Controller, Get, Param, Req } from '@nestjs/common';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { GameStatsService } from './game-stats.service';
 
 @Controller('stats')
@@ -9,6 +9,8 @@ export class GameStatsController {
 
   @Get('current-segment')
   @ApiOperation({ description: 'Get current game segment'})
+  @ApiOkResponse({description: 'Fetched current segment successfully.'})
+  @ApiBadRequestResponse({description: 'Bad request'})
   public async currentSegment(
   ): Promise<Number> {
     try {

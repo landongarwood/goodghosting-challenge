@@ -3,7 +3,7 @@ import { DocumentBuilder, SwaggerModule, OpenAPIObject } from '@nestjs/swagger'
 
 export const initSwagger = (app: INestApplication): OpenAPIObject => {
   const config = new DocumentBuilder()
-    .setTitle('GoodGhosting API Document')
+    .setTitle('GoodGhosting API')
     .setDescription('GoodGhosting API Document')
     .addServer(process.env.API_URL)
     .build()
