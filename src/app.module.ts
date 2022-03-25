@@ -3,7 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import configuration from './config/configuration';
-import { PlayersModule } from './players/players.module';
+import { PlayersModule } from './app/players/players.module';
+import { GameStatsModule } from './app/game-stats/game-stats.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { PlayersModule } from './players/players.module';
       envFilePath: '.env',
       isGlobal: true,
     }),
-    PlayersModule
+    PlayersModule,
+    GameStatsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
